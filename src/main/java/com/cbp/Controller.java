@@ -1,6 +1,9 @@
 package com.cbp;
 
+<<<<<<< Updated upstream:src/main/java/com/cbp/EntryController.java
 import java.util.Arrays;
+=======
+>>>>>>> Stashed changes:src/main/java/com/cbp/Controller.java
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +20,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/rest/sanctions")
+<<<<<<< Updated upstream:src/main/java/com/cbp/EntryController.java
 public class EntryController {
+=======
+public class Controller {
+	
+	@Autowired
+	SanctionService sanctionService;
+	
+>>>>>>> Stashed changes:src/main/java/com/cbp/Controller.java
 	@Autowired
 	Client client;
 	
@@ -28,6 +39,7 @@ public class EntryController {
     }
 	
 	 @GetMapping("/view/name/{field}")
+<<<<<<< Updated upstream:src/main/java/com/cbp/EntryController.java
 	    public Map<String, Object> searchByName(@PathVariable final String field) {
 	        Map<String,Object> map = null;
 	        SearchResponse response = client.prepareSearch("sanctions")
@@ -40,4 +52,15 @@ public class EntryController {
 	        map =   searchHits.get(0).getSourceAsMap();
 	        return map;
 	    }
+=======
+	 public Map<String, Object> index1(@PathVariable final String field) {
+		 return sanctionService.searchByName(field);
+	 }
+	 
+	 @PostMapping("/upload")
+	 public ResponseEntity<String> index2(@RequestParam("file") MultipartFile file) throws Exception{
+		 return fileUploadService.uploadData(file);
+	 }
+	 
+>>>>>>> Stashed changes:src/main/java/com/cbp/Controller.java
 }
