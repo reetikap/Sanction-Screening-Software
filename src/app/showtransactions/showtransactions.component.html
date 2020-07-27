@@ -1,30 +1,35 @@
 <div class="col-md-6">
-  <h2> User Details</h2>
-  
-  <table class="table table-striped">
+  <br><br><br><br>
+  <h1 style="color: blueviolet;font-size: 50px;
+  margin-left: 350px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Transaction Details</h1>
+  <br><br><br>
+  <table class="table table-striped" style="margin-left: 200px;  " border="1">
     <thead>
     <tr>
-      <th class="hidden">Id</th>
-      <th>Transaction Id</th>
-      <th>ref</th>
-      <th>dt</th>
-      <th>payer Name</th>
-      <th>payer Acc No</th>
-      <th>payee Name</th>
-      <th>paye Acc No</th>
+      <th class="hidden">Transaction Id</th>
+      <th>Date</th>
+      <th>Payer Name</th>
+     
+      <th>Payee Name</th>
+     
       <th>Amount</th>
-      <th>valid</th>
-      <th>sancitioned</th>
+      <th>Valid Status</th>
+      <th>Sancitioned Status</th>
     </tr>
   </thead>
 
     <tbody>
     <tr *ngFor="let user of users">
-      <td class="hidden"></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td class="hidden">{{user.transaction_id}}</td>
       
+      <td>{{user.dt}}</td>
+      <td>{{user.payerName}}</td>
+    
+      <td>{{user.payeeName}}</td>
+     
+      <td>{{user.amount}}</td>
+      <td>{{user.valid}}</td>
+      <td>{{user.sanctioned}}</td>
     </tr>
     </tbody>
   </table>

@@ -11,8 +11,7 @@ import { Transactiontable } from '../transactiontable';
   styleUrls: ['./showtransactions.component.css']
 })
 export class ShowtransactionsComponent implements OnInit {
- // headers = ['transaction_id','ref', 'dt', 'payerName', 'payerAccNo', 'payeeName', 'payeeAccNo','amount','valid','sanctioned'];
- // datasource1= new MatTableDataSource<Transactiontable>();
+ 
  
   constructor(private _service :TransactionService ,private router: Router) { }
 
