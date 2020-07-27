@@ -1,2 +1,16 @@
  
-<p>home works!</p>
+ <header>
+    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https://www.javainuse.com" class="navbar-brand">JavaInUse</a></div>
+    
+    <ul class="navbar-nav">
+       
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logInsucess" class="nav-link">View Employees</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/upload" class="nav-link">Upload</a></li>
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+    
+    </ul>
+      </nav>
+    </header>
+      

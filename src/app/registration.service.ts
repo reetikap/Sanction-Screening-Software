@@ -8,7 +8,7 @@ import { User } from './users';
 export class RegistrationService {
 
   constructor( private _http:HttpClient) { }
-  public loginUserFromRemote(user : User):Observable<any>{
+  authenticate(user : User):Observable<any>{
  return  this._http.post<any>("http://localhost:8091/login",user)
   }
   public registerUserFromRemote(user: User):Observable<any>{
@@ -17,5 +17,13 @@ export class RegistrationService {
   handleError(error:Response){
 
   }
-  
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem('username')
+    console.log(!(user === null))
+    return !(user === null)
+  }
+
+  logOut() {
+    sessionStorage.removeItem('username')
+  }
 }

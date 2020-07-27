@@ -20,6 +20,8 @@ import { MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatTooltipModule} from '@angular/material/tooltip';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import {AuthGuard} from './auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -34,6 +36,7 @@ import { HomeComponent } from './home/home.component';
     UploadComponent,
     NavbarComponent,
     HomeComponent,
+    LogoutComponent,
     
     
   ],
@@ -57,7 +60,7 @@ import { HomeComponent } from './home/home.component';
   
   ],
   
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

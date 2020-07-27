@@ -9,24 +9,19 @@ import {CoremModule} from './corem/corem.module';
 import { from } from 'rxjs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 const routes: Routes = [
-  {path:'',component:LoginComponent},
-  {path:'log-insuccess',
-  component:LogInsuccessComponent, 
-  children:[{
-    path:'',
-    component:LogInsuccessComponent,
-  },
-  {path:'home',
-  component:HomeComponent
-},
-  {path:'Upload',component:UploadComponent}]},
-  {path:'logInsuccess',component:LogInsuccessComponent},
-  {path:'showtransactions',component:ShowtransactionsComponent},
+  
+
+  {path:'Upload',canActivate:[AuthGuard],component:UploadComponent  },
+  {path:'',canActivate:[AuthGuard], component:LogInsuccessComponent},
+  {path:'showtransactions',canActivate:[AuthGuard],component:ShowtransactionsComponent},
   {path:'registration', component:RegistrationComponent},
   {path:'login',component:LoginComponent},
-  {path:'upload',component:UploadComponent},
-  {path:'home',component:HomeComponent},
+  {path:'upload',canActivate:[AuthGuard],component:UploadComponent},
+  {path:'home',canActivate:[AuthGuard],component:HomeComponent},
+  { path: 'logout',canActivate:[AuthGuard], component: LogoutComponent },
 ];
 
 @NgModule({
