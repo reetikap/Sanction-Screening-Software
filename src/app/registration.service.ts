@@ -9,10 +9,10 @@ export class RegistrationService {
 
   constructor( private _http:HttpClient) { }
   authenticate(user : User):Observable<any>{
- return  this._http.post<any>("http://localhost:8091/login",user)
+ return  this._http.post<any>("http://localhost:8099/login",user)
   }
   public registerUserFromRemote(user: User):Observable<any>{
-    return  this._http.post<any>("http://localhost:8091/registeruser",user)
+    return  this._http.post<any>("http://localhost:8099/registeruser",user)
   }
   handleError(error:Response){
 

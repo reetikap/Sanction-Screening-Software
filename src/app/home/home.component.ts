@@ -7,7 +7,7 @@ import {RegistrationService } from '../registration.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public loginService:RegistrationService) { }
+  constructor(public loginService:RegistrationService ) { }
 
   ngOnInit(): void {
   }

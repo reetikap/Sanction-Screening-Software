@@ -7,18 +7,19 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
-import { LogInsuccessComponent } from './log-insuccess/log-insuccess.component';
+
 import { ShowtransactionsComponent } from './showtransactions/showtransactions.component';
 import { UploadComponent } from './upload/upload.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {CoremModule} from './corem/corem.module';
+import {TransactionService} from './transaction.service'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatTooltipModule} from '@angular/material/tooltip';
-import { NavbarComponent } from './navbar/navbar.component';
+import {MatTableModule} from '@angular/material/table'
+
 import { HomeComponent } from './home/home.component';
 import {AuthGuard} from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
@@ -31,10 +32,10 @@ import { LogoutComponent } from './logout/logout.component';
   
     LoginComponent,
     RegistrationComponent,
-    LogInsuccessComponent,
+   
     ShowtransactionsComponent,
     UploadComponent,
-    NavbarComponent,
+ 
     HomeComponent,
     LogoutComponent,
     
@@ -49,9 +50,10 @@ import { LogoutComponent } from './logout/logout.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatTableModule,
     MatAutocompleteModule,
     MatButtonToggleModule,
-    CoremModule,
+    
     MatTooltipModule,
    
   
@@ -60,7 +62,8 @@ import { LogoutComponent } from './logout/logout.component';
   
   ],
   
-  providers: [AuthGuard],
-  bootstrap: [AppComponent]
+  providers: [AuthGuard, TransactionService],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

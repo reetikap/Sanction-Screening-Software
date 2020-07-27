@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UploadService } from 'src/app/upload.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { RegistrationService } from '../registration.service';
+import { ShowtransactionsComponent } from '../showtransactions/showtransactions.component';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
@@ -14,16 +17,20 @@ export class UploadComponent implements OnInit {
   message = '';
 
   fileInfos: Observable<any>;
-
-  constructor(private uploadService: UploadService) { }
+  obj:ShowtransactionsComponent;
+  constructor(private uploadService: UploadService ,private router: Router,public loginService:RegistrationService) { }
 
   
   
   ngOnInit(): void {
     this.fileInfos = this.uploadService.getFiles();
+
   }
 
- 
+  onclicktransaction(){
+    
+    this.router.navigate(["/showtransactions"]);
+  }
   selectFile(event) {
     this.selectedFiles = event.target.files;
   }
