@@ -1,3 +1,6 @@
+.spacer{
+  flex: 1 1 auto;
+}
 table.blueTable {
     border: 1px solid #1C6EA4;
     background-color: #EEEEEE;
@@ -57,3 +60,9 @@ table.blueTable {
     padding: 2px 8px;
     border-radius: 5px;
   }
+th{
+    border: 3px solid black;
+}
+td{
+    border: 3px solid black;
+}

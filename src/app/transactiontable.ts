@@ -1,7 +1,7 @@
 export class Transactiontable {
-    transaction_id:number;
+    id:number;
 	     ref:string;
-	    dt:string;
+	    date:string;
 		 payerName:string;
 		 payerAccNo:string;
 		 payeeName:string;

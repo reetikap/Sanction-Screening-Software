@@ -16,7 +16,7 @@ export class TransactionService {
  
   constructor(private http:HttpClient) {}
 
-  private userUrl = "http://localhost:8081/transactions";
+  private userUrl = "http://localhost:8102/rest/sanctions/view"; 
 	
 
   public getUsers() {
