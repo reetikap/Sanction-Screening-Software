@@ -19,7 +19,7 @@ import { MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatTooltipModule} from '@angular/material/tooltip';
 import {MatTableModule} from '@angular/material/table'
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './home/home.component';
 import {AuthGuard} from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
@@ -53,7 +53,7 @@ import { LogoutComponent } from './logout/logout.component';
     MatTableModule,
     MatAutocompleteModule,
     MatButtonToggleModule,
-    
+    MDBBootstrapModule,
     MatTooltipModule,
    
   

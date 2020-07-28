@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { map} from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Transactiontable } from '../transactiontable';
+import { RegistrationService } from '../registration.service';
 @Component({
   selector: 'app-showtransactions',
   templateUrl: './showtransactions.component.html',
@@ -13,7 +14,7 @@ import { Transactiontable } from '../transactiontable';
 export class ShowtransactionsComponent implements OnInit {
  
  
-  constructor(private _service :TransactionService ,private router: Router) { }
+  constructor(private _service :TransactionService ,private router: Router,public loginService:RegistrationService) { }
 
   users:Transactiontable[];
 
