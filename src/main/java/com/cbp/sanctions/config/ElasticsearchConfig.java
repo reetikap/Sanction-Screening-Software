@@ -1,4 +1,4 @@
-package com.cbp;
+package com.cbp.sanctions.config;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class config{
+public class ElasticsearchConfig{
     @Value("${elasticsearch.host:localhost}") 
     public String host;
     @Value("${elasticsearch.port:9300}") 
