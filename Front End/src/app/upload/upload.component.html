@@ -1,0 +1,44 @@
+<header>
+    
+  <mat-toolbar color="primary" class="mat-elevation-z20">
+
+<span><mat-icon>eco</mat-icon> Sanction Screening</span>
+<div class="spacer"></div>
+<button *ngIf="loginService.isUserLoggedIn()" routerLink="/home" mat-button><mat-icon>home</mat-icon>Home</button>
+
+<button *ngIf="loginService.isUserLoggedIn()"  mat-button  routerLink="/upload"  routerLinkActive="mat-accent">Upload </button>
+<button *ngIf="!loginService.isUserLoggedIn()"  mat-button routerLink="/login" class="nav-link">Login</button>
+<button  *ngIf="loginService.isUserLoggedIn()" mat-raised-button color="accent" routerLink="/login" class="nav-link">LogOut</button>
+
+</mat-toolbar>
+</header>
+<br><br><br><br><br><br><br><br>
+<div *ngIf="currentFile" class="progress">
+  <div
+    class="progress-bar progress-bar-info progress-bar-striped"
+    role="progressbar"
+    attr.aria-valuenow="{{ progress }}"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    [ngStyle]="{ width: progress + '%' }"
+  >
+    {{ progress }}%
+  </div>
+</div>
+<h1 style="margin-left: 150px; color: blueviolet;"> Upload The File</h1>
+<br>
+<label class="btn btn-outline-primary" style="margin-left: 150px;">
+  <input type="file" (change)="selectFile($event)" />
+</label>
+
+<button mat-raised-button color="primary"  class=" light-button" style="margin-left: 150px;" [disabled]="!selectedFiles" (click)="upload()">
+  Upload
+</button>
+
+<div class="alert alert-light" role="alert" style="color: crimson; ">{{ message }}</div>
+
+
+<br><br><br>
+<button mat-raised-button color="primary" class=" light-button" style="margin-left: 150px;" (click)="onclicktransaction()">
+ View Transactions
+</button>
