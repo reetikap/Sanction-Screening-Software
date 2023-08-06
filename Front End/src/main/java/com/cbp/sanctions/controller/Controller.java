@@ -2,55 +2,14 @@ package com.cbp.sanctions.controller;
 
 import java.util.List;
 
-<<<<<<< Updated upstream:src/main/java/com/cbp/EntryController.java
-import org.elasticsearch.action.get.GetResponse;
-import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.action.search.SearchType;
-import org.elasticsearch.client.Client;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.SearchHit;
-=======
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
->>>>>>> Stashed changes:src/main/java/com/cbp/sanctions/controller/Controller.java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< Updated upstream:src/main/java/com/cbp/EntryController.java
-import org.springframework.web.bind.annotation.PathVariable;
-=======
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
->>>>>>> Stashed changes:src/main/java/com/cbp/sanctions/controller/Controller.java
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-<<<<<<< Updated upstream:src/main/java/com/cbp/EntryController.java
-@RestController
-@RequestMapping("/rest/sanctions")
-public class EntryController {
-	@Autowired
-	Client client;
-	
-	@GetMapping("/view/{id}")
-    public Map<String, Object> view(@PathVariable final String id) {
-        GetResponse getResponse = client.prepareGet("sanctions", "un_sanctions", id).get();
-        return getResponse.getSource();
-    }
-	
-	 @GetMapping("/view/name/{field}")
-	    public Map<String, Object> searchByName(@PathVariable final String field) {
-	        Map<String,Object> map = null;
-	        SearchResponse response = client.prepareSearch("sanctions")
-	                                .setTypes("un_sanctions")
-	                                .setSearchType(SearchType.QUERY_THEN_FETCH)
-	                                .setQuery(QueryBuilders.matchQuery("name", field))
-	                                .get()
-	                                ;
-	        List<SearchHit> searchHits = Arrays.asList(response.getHits().getHits());
-	        map =   searchHits.get(0).getSourceAsMap();
-	        return map;
-	    }
-}
-=======
 import org.springframework.web.multipart.MultipartFile;
 
 import com.cbp.sanctions.models.PaymtTransaction;
@@ -123,4 +82,3 @@ public class Controller {
 		 return viewService.view();
 	 }
 }
->>>>>>> Stashed changes:src/main/java/com/cbp/sanctions/controller/Controller.java
